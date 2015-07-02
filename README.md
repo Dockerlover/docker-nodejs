@@ -16,7 +16,7 @@ Docker化nodejs
 
 - 运行容器
 
-        # 注意：假设代码目录中，需要包含自动构建的shell脚本[start.sh]
+> 注意：假设代码目录中，需要包含自动构建的shell脚本[start.sh]
         
 1. 修改supervisord.conf
 
