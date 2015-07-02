@@ -15,7 +15,7 @@ RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x
 	&& grep " node-v$NODE_VERSION-linux-x64.tar.gz\$" SHASUMS256.txt.asc | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x64.tar.gz" SHASUMS256.txt.asc \
-	&& npm install -g npm@"$NPM_VERSION" \
+	&& npm install -g npm@"$NPM_VERSION" bower grunt-cli\
 	&& npm cache clear
 # 创建默认代码路进
 RUN mkdir -p /code
