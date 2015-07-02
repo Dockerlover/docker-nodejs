@@ -4,7 +4,7 @@ Docker化nodejs
 
 ## 镜像特点
 
-- 2015/7/2 继承基础镜像docker-nodejs
+- 2015/7/2 继承基础镜像docker-python
 
 ## 使用方法
 
