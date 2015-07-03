@@ -14,8 +14,11 @@ RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x
 	&& gpg --verify SHASUMS256.txt.asc \
 	&& grep " node-v$NODE_VERSION-linux-x64.tar.gz\$" SHASUMS256.txt.asc | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 \
-	&& rm "node-v$NODE_VERSION-linux-x64.tar.gz" SHASUMS256.txt.asc \
-	&& npm install -g npm@"$NPM_VERSION" bower grunt grunt-cli gulp less grunt-contrib-less karma yo generator-karma generator-angular --registry=https://registry.npm.taobao.org\
+	&& rm "node-v$NODE_VERSION-linux-x64.tar.gz" SHASUMS256.txt.asc 
+RUN npm config set registry "https://registry.npm.taobao.org/"
+RUN npm install -g npm@"$NPM_VERSION" 
+RUN npm install -g bower grunt grunt-cli gulp less grunt-contrib-less karma 
+RUN npm install -g yo generator-karma generator-angular 
 	&& npm cache clear
 # 创建默认代码路进
 RUN mkdir -p /code
