@@ -17,9 +17,8 @@ RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x
 	&& rm "node-v$NODE_VERSION-linux-x64.tar.gz" SHASUMS256.txt.asc 
 RUN npm config set registry "https://registry.npm.taobao.org/"
 RUN npm install -g npm@"$NPM_VERSION" 
-RUN npm install -g bower grunt grunt-cli gulp less grunt-contrib-less karma 
-RUN npm install -g yo generator-karma generator-angular  && npm cache clear
-# 创建默认代码路进
+RUN npm install -g bower grunt  gulp less  karma  && npm cache clear
+# 创建默认代码路径
 RUN mkdir -p /code
 VOLUME ["/code"]
 # 默认暴露80端口
