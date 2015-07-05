@@ -16,8 +16,8 @@ RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x
 	&& tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x64.tar.gz" SHASUMS256.txt.asc 
 RUN npm config set registry "https://registry.npm.taobao.org"
-RUN npm install -g npm@"$NPM_VERSION" 
-RUN npm install -g bower grunt karma  && npm cache clear
+RUN npm install -g npm@"$NPM_VERSION" && npm cache clear
+
 # 创建默认代码路径
 RUN mkdir -p /code
 VOLUME ["/code"]
