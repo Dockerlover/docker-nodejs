@@ -5,7 +5,6 @@ Docker化nodejs
 ## 镜像特点
 
 - 2015/7/2 继承基础镜像docker-python
-- 2015/7/2 默认安装 bower grunt grunt-cli gulp less grunt-contrib-less karma yo generator-karma generator-angular  npm包
 
 ## 使用方法
 
