@@ -10,7 +10,8 @@ ENV NPM_VERSION 3.0.0
 # 安装nodejs
 RUN apt-get install -y python-software-properties software-properties-common  && add-apt-repository ppa:chris-lea/node.js
 RUN apt-get update && apt-get install -y nodejs npm
-RUN npm config set registry "https://registry.npm.taobao.org"
+RUN npm config set registry "http://registry.npm.taobao.org"
+RUN npm install -g n && n '$NODE_VERSION'
 RUN npm install -g npm@"$NPM_VERSION" && npm cache clear
 
 # 创建默认代码路径
