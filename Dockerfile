@@ -8,7 +8,7 @@ ENV SERVICE_ID nodejs
 ENV NODE_VERSION 0.12.5
 ENV NPM_VERSION 3.2.2
 # 安装nodejs
-RUN apt-get install -y python-software-properties software-properties-common  && add-apt-repository ppa:chris-lea/node.js
+RUN apt-get update && apt-get install -y python-software-properties software-properties-common  && add-apt-repository -y ppa:chris-lea/node.js
 RUN apt-get update && apt-get install -y nodejs npm
 RUN npm config set registry "http://registry.npm.taobao.org"
 RUN npm install -g n && n '$NODE_VERSION'
