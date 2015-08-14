@@ -5,13 +5,12 @@ MAINTAINER  liuhong1.happy@163.com
 # 添加环境变量
 ENV USER_NAME admin
 ENV SERVICE_ID nodejs
-ENV NODE_VERSION 0.12.5
+ENV NODE_VERSION 0.12.7
 ENV NPM_VERSION 3.2.2
 # 安装nodejs
 RUN apt-get update && apt-get install -y python-software-properties software-properties-common
 RUN add-apt-repository -y ppa:chris-lea/node.js
 RUN apt-get update && apt-get install -y nodejs 
-RUN apt-get install -y npm
 RUN npm config set registry "http://registry.npm.taobao.org"
 RUN npm install -g n && n '$NODE_VERSION'
 RUN npm install -g npm@"$NPM_VERSION" && npm cache clear
