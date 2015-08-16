@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y nodejs
 RUN npm config set registry "http://registry.npm.taobao.org"
 RUN npm install -g n && n "$NODE_VERSION"
 RUN npm install -g npm@"$NPM_VERSION" && npm cache clear
-
+RUN apt-get autoremove -y python-software-properties software-properties-common && rm -rf /var/lib/apt/lists/*
 # 创建默认代码路径
 RUN mkdir -p /code
 VOLUME ["/code"]
