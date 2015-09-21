@@ -1,12 +1,10 @@
 # 基础镜像 
-FROM docker-python
+FROM docker-python:pro
 # 维护人员
 MAINTAINER  liuhong1.happy@163.com
 # 添加环境变量
-ENV USER_NAME admin
-ENV SERVICE_ID nodejs
-ENV NODE_VERSION 0.12.5
-ENV NPM_VERSION 3.2.2
+ENV NODE_VERSION 4.0.0
+ENV NPM_VERSION 3.3.3
 # 安装nodejs
 RUN apt-get update && apt-get install -y python-software-properties software-properties-common
 RUN add-apt-repository -y ppa:chris-lea/node.js
@@ -24,4 +22,3 @@ EXPOSE  80
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # 启动supervisord
 CMD ["/usr/bin/supervisord"]
-
