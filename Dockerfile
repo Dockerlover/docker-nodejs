@@ -3,8 +3,8 @@ FROM docker-python:pro
 # 维护人员
 MAINTAINER  liuhong1.happy@163.com
 # 添加环境变量
-ENV NODE_VERSION 4.0.0
-ENV NPM_VERSION 3.3.3
+ENV NODE_VERSION 4.2.2
+ENV NPM_VERSION 3.3.12
 # 安装nodejs
 RUN apt-get update && apt-get install -y python-software-properties software-properties-common
 RUN add-apt-repository -y ppa:chris-lea/node.js
